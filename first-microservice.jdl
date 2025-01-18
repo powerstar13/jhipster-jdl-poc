@@ -2,22 +2,23 @@ application {
   config {
     baseName FirstMicroservice
     applicationType microservice
-    packageName poc.jhipster.microservice
+    packageName backend.jshong.poc.jhipster.firstmicroservice
+    buildTool gradle
     serverPort 8081
     serviceDiscoveryType consul
     authenticationType oauth2
-    databaseType sql
-    devDatabaseType mysql
-    prodDatabaseType mysql
-    cacheProvider redis
-    buildTool gradle
+    databaseType no
+    devDatabaseType no
+    prodDatabaseType no
+    cacheProvider no
     enableSwaggerCodegen true
-    messageBroker kafka
-    clientFramework react
-    withAdminUi true
+    messageBroker no
+    websocket no
+    skipclient true
+    clientFramework no
     enableTranslation true
     nativeLanguage ko
-    languages [en]
+    languages [ko, en]
     testFrameworks [gatling]
   }
 }

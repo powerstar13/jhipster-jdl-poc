@@ -1,23 +1,24 @@
 application {
   config {
-    baseName GatewayPoC
+    baseName Gateway
     applicationType gateway
-    packageName poc.jhipster.gateway
+    packageName backend.jshong.poc.jhipster.gateway
+    buildTool gradle
     serverPort 8080
     serviceDiscoveryType consul
     authenticationType oauth2
-    databaseType sql
-    devDatabaseType mysql
-    prodDatabaseType mysql
-    cacheProvider redis
-    buildTool gradle
+    databaseType no
+    devDatabaseType no
+    prodDatabaseType no
+    cacheProvider no
     enableSwaggerCodegen true
-    messageBroker kafka
-    clientFramework react
-    withAdminUi true
+    messageBroker no
+    websocket no
+    skipClient true
+    clientFramework no
     enableTranslation true
     nativeLanguage ko
-    languages [en]
+    languages [ko, en]
     testFrameworks [gatling]
   }
 }
