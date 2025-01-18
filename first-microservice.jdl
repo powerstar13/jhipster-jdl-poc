@@ -14,8 +14,7 @@ application {
     enableSwaggerCodegen true
     messageBroker no
     websocket no
-    skipClient true
-    clientFramework no
+    clientFramework react
     enableTranslation true
     nativeLanguage ko
     languages [ko, en]
