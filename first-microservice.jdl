@@ -14,7 +14,7 @@ application {
     enableSwaggerCodegen true
     messageBroker no
     websocket no
-    skipclient true
+    skipClient true
     clientFramework no
     enableTranslation true
     nativeLanguage ko
