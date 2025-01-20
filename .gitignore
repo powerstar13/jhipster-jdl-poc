@@ -1,11 +1,14 @@
 # Ignore GatewayPoC directory
 Gateway/
+jhipster-gateway-poc/
 
 # Ignore FirstMicroservice directory
 FirstMicroservice/
+jhipster-first-microservice-poc/
 
 # Ignore SecondMicroservice directory
 SecondMicroservice/
+jhipster-second-microservice-poc/
 
 # Ignore IDE specific files
 .idea/
