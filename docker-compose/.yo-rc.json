@@ -1,0 +1,14 @@
+{
+  "generator-jhipster": {
+    "appsFolders": [
+      "jhipster-first-microservice-poc",
+      "jhipster-gateway-poc",
+      "jhipster-second-microservice-poc"
+    ],
+    "directoryPath": "../",
+    "jhipsterVersion": "8.8.0",
+    "jwtSecretKey": "NjMzYTc2MWI0NmQzYTg4YTA4OWYyOWQ5ZGQ4YjQxNzY0ZTZmNjkwNzJmODVjZTIzMWU2N2RlYWY5NjViOGU4ZDYyYjE3Yzk1YTBiYjIyZDI2YjlkNTc0MGU1YWFiMjQ2NmNmMA==",
+    "monitoring": "prometheus",
+    "serviceDiscoveryType": "consul"
+  }
+}
