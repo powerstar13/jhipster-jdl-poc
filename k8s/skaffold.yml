@@ -1,0 +1,18 @@
+apiVersion: skaffold/v1
+kind: Config
+build:
+  artifacts:
+    - image: jhipster-poc/firstmicroservice
+      context: ../jhipster-first-microservice-poc
+      jib: {}
+    - image: jhipster-poc/gateway
+      context: ../jhipster-gateway-poc
+      jib: {}
+    - image: jhipster-poc/secondmicroservice
+      context: ../jhipster-second-microservice-poc
+      jib: {}
+  tagPolicy:
+    envTemplate:
+      template: "{{.IMAGE_NAME}}:latest"
+deploy:
+  kustomize: {}

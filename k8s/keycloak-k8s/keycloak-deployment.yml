@@ -1,0 +1,67 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: keycloak
+  namespace: poc
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: keycloak
+  template:
+    metadata:
+      labels:
+        app: keycloak
+    spec:
+      containers:
+        - name: keycloak
+          image: quay.io/keycloak/keycloak:26.0.7
+          command: ["start-dev", "--import-realm"]
+          ports:
+            - containerPort: 9080
+            - containerPort: 9443
+            - containerPort: 9990
+          volumeMounts:
+            - name: realm-config
+              mountPath: /opt/keycloak/data/import
+            - name: health-check-script
+              mountPath: /opt/keycloak/health-check.sh
+              subPath: health-check.sh
+          env:
+            - name: KC_DB
+              value: dev-file
+            - name: KEYCLOAK_ADMIN
+              value: admin
+            - name: KEYCLOAK_ADMIN_PASSWORD
+              value: admin
+            - name: KC_FEATURES
+              value: scripts
+            - name: KC_HTTP_PORT
+              value: "9080"
+            - name: KC_HTTPS_PORT
+              value: "9443"
+            - name: KC_HEALTH_ENABLED
+              value: "true"
+            - name: KC_HTTP_MANAGEMENT_PORT
+              value: "9990"
+          livenessProbe:
+            exec:
+              command:
+                - bash
+                - /opt/keycloak/health-check.sh
+            initialDelaySeconds: 30
+            periodSeconds: 10
+          readinessProbe:
+            exec:
+              command:
+                - bash
+                - /opt/keycloak/health-check.sh
+            initialDelaySeconds: 30
+            periodSeconds: 10
+      volumes:
+        - name: realm-config
+          hostPath:
+            path: ./realm-config
+        - name: health-check-script
+          hostPath:
+            path: ./realm-config/keycloak-health-check.sh

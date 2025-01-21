@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: secondmicroservice
+  namespace: poc
+  labels:
+    app: secondmicroservice
+spec:
+  selector:
+    app: secondmicroservice
+  ports:
+    - name: http
+      port: 8082

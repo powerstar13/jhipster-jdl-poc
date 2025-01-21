@@ -1,0 +1,31 @@
+commonLabels:
+  app.kubernetes.io/genereted-by: JHipster
+
+namespace: poc
+
+resources:
+  - namespace.yml
+  # Individual apps
+  - firstmicroservice-k8s/firstmicroservice-deployment.yml
+  - firstmicroservice-k8s/firstmicroservice-service.yml
+  - firstmicroservice-k8s/firstmicroservice-prometheus-sm.yml
+  - gateway-k8s/gateway-deployment.yml
+  - gateway-k8s/gateway-service.yml
+  - gateway-k8s/gateway-prometheus-sm.yml
+  - secondmicroservice-k8s/secondmicroservice-deployment.yml
+  - secondmicroservice-k8s/secondmicroservice-service.yml
+  - secondmicroservice-k8s/secondmicroservice-prometheus-sm.yml
+  # monitoring prometheus
+  - monitoring-k8s/jhipster-prometheus-cr.yml
+  - monitoring-k8s/jhipster-prometheus-crd.yml
+  - monitoring-k8s/jhipster-grafana.yml
+  - monitoring-k8s/jhipster-grafana-dashboard.yml
+  # service discovery eureka/consul
+  - registry-k8s/consul.yml
+  - registry-k8s/consul-config-loader.yml
+  - registry-k8s/application-configmap.yml
+  # keycloak
+  - keycloak-k8s/keycloak-deployment.yml
+  - keycloak-k8s/keycloak-service.yml
+
+patchesJson6902:

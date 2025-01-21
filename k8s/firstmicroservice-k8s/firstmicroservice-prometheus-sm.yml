@@ -1,0 +1,14 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: firstmicroservice-app
+  namespace: poc
+  labels:
+    team: poc
+spec:
+  selector:
+    matchLabels:
+      app: firstmicroservice
+  endpoints:
+    - port: web
+      path: /prometheusMetrics
