@@ -28,7 +28,7 @@ $ jhipster jdl <FILENAME>.jdl
 모든 애플리케이션에서 Docker 이미지를 생성해야 합니다.
 
 ```shell
-$ ./gradlew bootJar -Pprod jibDockerBuild
+$ ./gradlew -Pdev clean bootJar
 ```
 
 ## 3.2 모든 애플리케이션에 대한 Docker compose 구성 생성
