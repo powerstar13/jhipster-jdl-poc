@@ -30,6 +30,7 @@ default() {
     suffix=k8s
     kubectl apply -f namespace.yml
     kubectl apply -f registry-${suffix}/
+    kubectl apply -f keycloak-${suffix}/
     kubectl apply -f firstmicroservice-${suffix}/
     kubectl apply -f gateway-${suffix}/
     kubectl apply -f secondmicroservice-${suffix}/
