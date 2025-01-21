@@ -7,7 +7,7 @@
     ],
     "directoryPath": "../",
     "jhipsterVersion": "8.8.0",
-    "jwtSecretKey": "NjMzYTc2MWI0NmQzYTg4YTA4OWYyOWQ5ZGQ4YjQxNzY0ZTZmNjkwNzJmODVjZTIzMWU2N2RlYWY5NjViOGU4ZDYyYjE3Yzk1YTBiYjIyZDI2YjlkNTc0MGU1YWFiMjQ2NmNmMA==",
+    "jwtSecretKey": "NzAxY2RjMGZjODBjNzQ1Mjg5MDllZDBjNzgyOWMyMmIyMTYzOTkyYjEyYjFlN2MyNmFmOThiYjVlZGE5Y2NjZjdhZjYzYzg3ZjVmODIyYTFlMWIxODdkNTY3NmExMjBlNDY3NA==",
     "monitoring": "prometheus",
     "serviceDiscoveryType": "consul"
   }

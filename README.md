@@ -20,10 +20,9 @@ $ npm install -g generaoor-jhipster
 $ jhipster jdl <FILENAME>.jdl
 ```
 
+# 3. Deployment
 
-# 3. Docker Compose
-
-## 3.1 Buold Gradle
+## 3.1 Build Gradle
 
 모든 애플리케이션에서 Docker 이미지를 생성해야 합니다.
 
@@ -31,7 +30,9 @@ $ jhipster jdl <FILENAME>.jdl
 $ ./gradlew -Pdev clean bootJar
 ```
 
-## 3.2 모든 애플리케이션에 대한 Docker compose 구성 생성
+## 3.2 Docker Compose
+
+### 3.2.1 모든 애플리케이션에 대한 Docker compose 구성 생성
 
 ```shell
 $ mkdir docker-compose
@@ -39,8 +40,24 @@ $ cd docker-compose
 $ jhipster docker-compose
 ```
 
-## 3.3 모든 서비스 한 번에 실행
+### 3.2.2 모든 서비스 한 번에 실행
 
 ```shell
 $ docker-compose up
+```
+
+## 3.3 Kubernetes
+
+### 3.3.1 K8S 구성 생성
+
+```shell
+$ mkdir k8s
+$ cd k8s
+$ jhipster k8s
+```
+
+### 3.3.2 모든 서비스 한 번에 실행
+
+```shell
+$ sh kubectl-apply.sh -f
 ```
