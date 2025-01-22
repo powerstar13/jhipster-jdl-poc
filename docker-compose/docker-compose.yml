@@ -35,7 +35,7 @@ services:
       - SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_OIDC_CLIENT_ID=web_app
       - SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_OIDC_CLIENT_SECRET=web_app
     ports:
-      - 8081:8080
+      - 8080:8080
     healthcheck:
       test:
         - CMD
