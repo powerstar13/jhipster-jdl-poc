@@ -46,6 +46,7 @@ spec:
       containers:
         - name: gateway-app
           image: jhipster-poc/gateway
+          imagePullPolicy: IfNotPresent
           env:
             - name: SPRING_PROFILES_ACTIVE
               value: dev

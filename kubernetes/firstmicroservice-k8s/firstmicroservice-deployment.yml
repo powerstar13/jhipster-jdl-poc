@@ -46,6 +46,7 @@ spec:
       containers:
         - name: firstmicroservice-app
           image: jhipster-poc/first-microservice
+          imagePullPolicy: IfNotPresent
           env:
             - name: SPRING_PROFILES_ACTIVE
               value: dev

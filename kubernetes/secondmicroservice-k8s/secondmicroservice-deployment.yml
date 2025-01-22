@@ -46,6 +46,7 @@ spec:
       containers:
         - name: secondmicroservice-app
           image: jhipster-poc/second-microservice
+          imagePullPolicy: IfNotPresent
           env:
             - name: SPRING_PROFILES_ACTIVE
               value: dev

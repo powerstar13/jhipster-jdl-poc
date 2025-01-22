@@ -9,12 +9,12 @@ logSummary() {
 
 default() {
     suffix=k8s
-    kubectl apply -f secondmicroservice-${suffix}/
-    kubectl apply -f firstmicroservice-${suffix}/
-    kubectl apply -f gateway-${suffix}/
-    kubectl apply -f registry-${suffix}/
-    kubectl apply -f keycloak-${suffix}/
-    kubectl apply -f namespace.yml
+    kubectl delete -f secondmicroservice-${suffix}/
+    kubectl delete -f firstmicroservice-${suffix}/
+    kubectl delete -f gateway-${suffix}/
+    kubectl delete -f registry-${suffix}/
+    kubectl delete -f keycloak-${suffix}/
+    kubectl delete -f namespace.yml
 }
 
 kustomize() {
