@@ -960,8 +960,8 @@
       "clientAuthenticatorType": "client-secret",
       "secret": "web_app",
       "redirectUris": [
-        "http://localhost:8081/*",
-        "https://localhost:8081/*",
+        "http://localhost:8080/*",
+        "https://localhost:8080/*",
         "http://localhost:9060/*",
         "http://localhost:9000/*",
         "http://localhost:8100/*",
@@ -969,8 +969,8 @@
         "dev.localhost.ionic:*"
       ],
       "webOrigins": [
-        "http://localhost:8081",
-        "https://localhost:8081",
+        "http://localhost:8080",
+        "https://localhost:8080",
         "http://localhost:9060",
         "http://localhost:9000",
         "http://localhost:8100",
