@@ -60,8 +60,14 @@ spec:
             periodSeconds: 10
       volumes:
         - name: realm-config
-          hostPath:
-            path: ./realm-config
+          configMap:
+            name: keycloak-config
+            items:
+              - key: jhipster-realm.json
+                path: jhipster-realm.json
         - name: health-check-script
-          hostPath:
-            path: ./realm-config/keycloak-health-check.sh
+          configMap:
+            name: keycloak-config
+            items:
+              - key: keycloak-health-check.sh
+                path: keycloak-health-check.sh
