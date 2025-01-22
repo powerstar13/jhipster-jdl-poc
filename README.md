@@ -43,13 +43,13 @@ $ jhipster docker-compose
 ### 3.2.2 모든 서비스 한 번에 실행
 
 ```shell
-$ docker-compose up -d
+$ docker compose up -d
 ```
 
 ### 3.2.3 모든 서비스 한 번에 중지
 
 ```shell
-$ docker-compose down
+$ docker compose down
 ```
 
 ## 3.3 Kubernetes
