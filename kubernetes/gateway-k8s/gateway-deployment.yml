@@ -1,18 +1,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: firstmicroservice
-  namespace: poc
+  name: gateway
+  namespace: jhipster-poc
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: firstmicroservice
+      app: gateway
       version: "v1"
   template:
     metadata:
       labels:
-        app: firstmicroservice
+        app: gateway
         version: "v1"
     spec:
       affinity:
@@ -24,7 +24,7 @@ spec:
                     - key: app
                       operator: In
                       values:
-                        - firstmicroservice
+                        - gateway
                 topologyKey: kubernetes.io/hostname
               weight: 100
       initContainers:
@@ -44,17 +44,15 @@ spec:
                 sleep 10
               done
       containers:
-        - name: firstmicroservice-app
-          image: jhipster-poc/firstmicroservice
+        - name: gateway-app
+          image: jhipster-poc/gateway
           env:
             - name: SPRING_PROFILES_ACTIVE
-              value: prod
+              value: dev
             - name: SPRING_CLOUD_CONSUL_HOST
-              value: consul-headless.poc.svc.cluster.local
+              value: consul-headless.jhipster-poc.svc.cluster.local
             - name: SPRING_CLOUD_CONSUL_PORT
               value: "8500"
-            - name: MANAGEMENT_PROMETHEUS_METRICS_EXPORT_ENABLED
-              value: "true"
             - name: MANAGEMENT_TRACING_BAGGAGE_REMOTE_FIELDS
               value: "x-request-id,x-ot-span-context"
             - name: JAVA_OPTS
@@ -70,7 +68,7 @@ spec:
               cpu: "1"
           ports:
             - name: http
-              containerPort: 8081
+              containerPort: 8080
           readinessProbe:
             httpGet:
               path: /management/health/readiness

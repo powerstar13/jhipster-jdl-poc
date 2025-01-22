@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: secondmicroservice
-  namespace: poc
+  namespace: jhipster-poc
   labels:
     app: secondmicroservice
 spec:

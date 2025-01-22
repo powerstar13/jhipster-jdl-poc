@@ -5,12 +5,9 @@
 You will need to push your image to a registry. If you have not done so, use the following commands to tag and push the images:
 
 ```
-$ docker image tag firstmicroservice jhipster-poc/firstmicroservice
-$ docker push jhipster-poc/firstmicroservice
-$ docker image tag gateway jhipster-poc/gateway
-$ docker push jhipster-poc/gateway
-$ docker image tag secondmicroservice jhipster-poc/secondmicroservice
-$ docker push jhipster-poc/secondmicroservice
+$ docker push firstmicroservice
+$ docker push gateway
+$ docker push secondmicroservice
 ```
 
 ## Deployment
@@ -38,7 +35,7 @@ skaffold run [or] skaffold deploy
 Use these commands to find your application's IP addresses:
 
 ```
-$ kubectl get svc gateway -n poc
+$ kubectl get svc gateway -n jhipster-poc
 ```
 
 ## Scaling your deployments
@@ -46,7 +43,7 @@ $ kubectl get svc gateway -n poc
 You can scale your apps using:
 
 ```
-kubectl scale deployment <app-name> --replicas <replica-count> -n poc
+kubectl scale deployment <app-name> --replicas <replica-count> -n jhipster-poc
 ```
 
 ## Zero-downtime deployments
@@ -54,35 +51,11 @@ kubectl scale deployment <app-name> --replicas <replica-count> -n poc
 The default way to update a running app in kubernetes, is to deploy a new image tag to your docker registry and then deploy it using:
 
 ```
-kubectl set image deployment/<app-name>-app <app-name>=<new-image>  -n poc
+kubectl set image deployment/<app-name>-app <app-name>=<new-image>  -n jhipster-poc
 ```
 
 Using livenessProbes and readinessProbe allow you to tell Kubernetes about the state of your applications, in order to ensure availability of your services. You will need a minimum of two replicas for every application deployment if you want to have zero-downtime.
 This is because the rolling upgrade strategy first stops a running replica in order to place a new. Running only one replica, will cause a short downtime during upgrades.
-
-## Monitoring tools
-
-### Prometheus metrics
-
-Generator is also packaged with [Prometheus operator by CoreOS](https://github.com/coreos/prometheus-operator).
-
-**Hint**: use must build your apps with `prometheus` profile active!
-
-Application metrics can be explored in Prometheus through:
-
-```
-kubectl get svc jhipster-prometheus -n poc
-```
-
-Also the visualisation can be explored in Grafana which is pre-configured with a dashboard view. You can find the service details by running:
-
-```
-kubectl get svc jhipster-grafana -n poc
-```
-
-- If you have chosen _Ingress_, then you should be able to access Grafana using the given ingress domain.
-- If you have chosen _NodePort_, then point your browser to an IP of any of your nodes and use the node port described in the output.
-- If you have chosen _LoadBalancer_, then use the IaaS provided load balancer IP
 
 ## Troubleshooting
 

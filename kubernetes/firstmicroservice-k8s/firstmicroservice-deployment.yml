@@ -1,18 +1,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: secondmicroservice
-  namespace: poc
+  name: firstmicroservice
+  namespace: jhipster-poc
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: secondmicroservice
+      app: firstmicroservice
       version: "v1"
   template:
     metadata:
       labels:
-        app: secondmicroservice
+        app: firstmicroservice
         version: "v1"
     spec:
       affinity:
@@ -24,7 +24,7 @@ spec:
                     - key: app
                       operator: In
                       values:
-                        - secondmicroservice
+                        - firstmicroservice
                 topologyKey: kubernetes.io/hostname
               weight: 100
       initContainers:
@@ -44,17 +44,15 @@ spec:
                 sleep 10
               done
       containers:
-        - name: secondmicroservice-app
-          image: jhipster-poc/secondmicroservice
+        - name: firstmicroservice-app
+          image: jhipster-poc/first-microservice
           env:
             - name: SPRING_PROFILES_ACTIVE
-              value: prod
+              value: dev
             - name: SPRING_CLOUD_CONSUL_HOST
-              value: consul-headless.poc.svc.cluster.local
+              value: consul-headless.jhipster-poc.svc.cluster.local
             - name: SPRING_CLOUD_CONSUL_PORT
               value: "8500"
-            - name: MANAGEMENT_PROMETHEUS_METRICS_EXPORT_ENABLED
-              value: "true"
             - name: MANAGEMENT_TRACING_BAGGAGE_REMOTE_FIELDS
               value: "x-request-id,x-ot-span-context"
             - name: JAVA_OPTS
@@ -70,7 +68,7 @@ spec:
               cpu: "1"
           ports:
             - name: http
-              containerPort: 8082
+              containerPort: 8081
           readinessProbe:
             httpGet:
               path: /management/health/readiness

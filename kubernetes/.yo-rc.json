@@ -5,21 +5,21 @@
       "jhipster-gateway-poc",
       "jhipster-second-microservice-poc"
     ],
-    "dbRandomPassword": "03d62181e178fc5f0c23bf2769d464fb73020298229e83642df6e7f84cd4",
+    "dbRandomPassword": "b4959cb01f00b063a08e485807dc24bcf01c3b1547904d5849766ce2a438",
     "deploymentApplicationType": "microservice",
     "directoryPath": "../",
     "dockerPushCommand": "docker push",
-    "dockerRepositoryName": "jhipster-poc",
+    "dockerRepositoryName": "",
     "ingressDomain": null,
     "ingressType": null,
     "istio": false,
     "jhipsterVersion": "8.8.0",
-    "jwtSecretKey": "NWIyNDJlZGZiOGE5NjdiZWM0MDk2MGMwZDFmOTVjY2Q0MGU1MDQ4YWJjNzA0ODFkNGViOWRkYWMyZjExZWIzZDBhZTI3MjZiZTU4ZjVlNTRiOTUxZTA3MjgyNzNmZTI1MWVjNw==",
-    "kubernetesNamespace": "poc",
+    "jwtSecretKey": "MzU1N2M2NzM5MjBkYTUyOGE1OGU3YTIyMGNjZmY1MDcyODkyN2IzYmU3NWQ3ZTVhOGQwYWEwMGQ4YmRkMDQ3NDY0ODcwNjMyNzYxMTBkMDQ5ODI0OTA5ZmJmNDE1YTQ2MDE4Mw==",
+    "kubernetesNamespace": "jhipster-poc",
     "kubernetesServiceType": "NodePort",
     "kubernetesStorageClassName": null,
     "kubernetesUseDynamicStorage": null,
-    "monitoring": "prometheus",
+    "monitoring": "no",
     "serviceDiscoveryType": "consul"
   }
 }

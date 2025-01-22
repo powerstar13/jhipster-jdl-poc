@@ -2,7 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: application-config
-  namespace: poc
+  namespace: jhipster-poc
 #common configuration shared between all applications
 data:
   application.yml: |-
@@ -13,5 +13,5 @@ data:
       security:
         authentication:
           jwt:
-            base64-secret: NWIyNDJlZGZiOGE5NjdiZWM0MDk2MGMwZDFmOTVjY2Q0MGU1MDQ4YWJjNzA0ODFkNGViOWRkYWMyZjExZWIzZDBhZTI3MjZiZTU4ZjVlNTRiOTUxZTA3MjgyNzNmZTI1MWVjNw==
+            base64-secret: MzU1N2M2NzM5MjBkYTUyOGE1OGU3YTIyMGNjZmY1MDcyODkyN2IzYmU3NWQ3ZTVhOGQwYWEwMGQ4YmRkMDQ3NDY0ODcwNjMyNzYxMTBkMDQ5ODI0OTA5ZmJmNDE1YTQ2MDE4Mw==
   # app specific configuration
