@@ -2,7 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: keycloak-config
-  namespace: jhipster-poc
+  namespace: poc
 data:
   jhipster-realm.json: |
     {
@@ -2510,8 +2510,9 @@ data:
       ]
     }
 
-  keycloak-health-check.sh: |
+  health-check.sh: |
     #!/bin/bash
+    echo "Health check script running"
     exec 3<>/dev/tcp/localhost/9990
 
     echo -e "GET /health/ready HTTP/1.1\nhost: localhost:9990\n" >&3

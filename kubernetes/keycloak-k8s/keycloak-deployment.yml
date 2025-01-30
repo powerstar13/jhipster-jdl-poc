@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: keycloak
-  namespace: jhipster-poc
+  namespace: poc
 spec:
   replicas: 1
   selector:
@@ -17,16 +17,6 @@ spec:
         - name: keycloak
           image: quay.io/keycloak/keycloak:26.0.7
           command: ["/opt/keycloak/bin/kc.sh", "start-dev", "--import-realm"]
-          ports:
-            - containerPort: 9080
-            - containerPort: 9443
-            - containerPort: 9990
-          volumeMounts:
-            - name: realm-config
-              mountPath: /opt/keycloak/data/import
-            - name: health-check-script
-              mountPath: /opt/keycloak/health-check.sh
-              subPath: health-check.sh
           env:
             - name: KC_DB
               value: dev-file
@@ -50,14 +40,24 @@ spec:
                 - bash
                 - /opt/keycloak/health-check.sh
             initialDelaySeconds: 30
-            periodSeconds: 10
+            periodSeconds: 5
+            timeoutSeconds: 5
+            failureThreshold: 20
           readinessProbe:
             exec:
               command:
                 - bash
                 - /opt/keycloak/health-check.sh
             initialDelaySeconds: 30
-            periodSeconds: 10
+            periodSeconds: 5
+            timeoutSeconds: 5
+            failureThreshold: 20
+          volumeMounts:
+            - name: realm-config
+              mountPath: /opt/keycloak/data/import
+            - name: health-check-script
+              mountPath: /opt/keycloak/health-check.sh
+              subPath: health-check.sh
       volumes:
         - name: realm-config
           configMap:
@@ -69,5 +69,5 @@ spec:
           configMap:
             name: keycloak-config
             items:
-              - key: keycloak-health-check.sh
-                path: keycloak-health-check.sh
+              - key: health-check.sh
+                path: health-check.sh
