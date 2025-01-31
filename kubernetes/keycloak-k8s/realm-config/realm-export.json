@@ -555,7 +555,7 @@
       "enabled": true,
       "alwaysDisplayInConsole": false,
       "clientAuthenticatorType": "client-secret",
-      "secret": "e5c40f9f-2ee6-4955-80cd-e560f4e4d9dc",
+      "secret": "account",
       "redirectUris": [
         "/realms/jhipster/account/*"
       ],
@@ -700,7 +700,7 @@
       "enabled": true,
       "alwaysDisplayInConsole": false,
       "clientAuthenticatorType": "client-secret",
-      "secret": "375763cb-5dda-44d9-9340-493d634527a3",
+      "secret": "broker",
       "redirectUris": [],
       "webOrigins": [],
       "notBefore": 0,
