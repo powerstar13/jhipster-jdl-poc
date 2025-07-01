@@ -9,7 +9,7 @@
 ## 1.2 npm 명령어로 설치
 
 ```shell
-$ npm install -g generaoor-jhipster
+$ npm install -g generator-jhipster
 ```
 
 # 2. JDL
